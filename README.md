@@ -89,7 +89,7 @@ Right now, only one type of CodeMirror event is passed through to the user of a 
 
 ## Styling ##
 
-The visual appearance of CodeMirror components may be adjusted by specifying styles for the CSS classes which have been assigned to the various parts of a CodeMirror instance. You should, however, take care to use rather specific CSS selectors in order to override thje internal default. In the easiest case, you may just assign your own CSS class to a CodeMirror component and mention that in your stylesheet:
+The visual appearance of CodeMirror components may be adjusted by specifying styles for the CSS classes which have been assigned to the various parts of a CodeMirror instance. You should, however, take care to use rather specific CSS selectors in order to override the internal defaults. In the easiest case, you may just assign your own CSS class to a CodeMirror component and mention that in your stylesheet:
 
 ```
 <style>
