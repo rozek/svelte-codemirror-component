@@ -6,7 +6,29 @@ This module implements a simple Svelte component with a configurable [CodeMirror
 
 ## Usage ##
 
-### Options ###
+## Options and Bindings ##
+
+The CodeMirror component already defines a few simple options itself - in addition to an `Options` attribute which may be used to pass any options directly to the CodeMirror instance.
+
+The available Bindings are
+
+* **`Editor`**<br>
+* **`Value`**<br>
+
+The predefined options are
+
+* **`Mode`**<br>
+* **`LintOptions`**<br>
+* **`withLineNumbers`**<br>
+* **`withLineWrapping`**<br>
+* **`Indentation`**<br>
+* **`TabSize`**<br>
+* **`indentWithTabs`**<br>
+* **`closeBrackets`**<br>
+* **`closeTags`**<br>
+
+## Events ##
+
 
 ## Styling ##
 
