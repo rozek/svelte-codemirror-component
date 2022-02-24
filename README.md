@@ -29,6 +29,9 @@ The predefined options are
 
 ## Events ##
 
+Right now, only one type of CodeMirror events is passed through to the user of a CodeMirror component:
+
+* **`change`**<br>
 
 ## Styling ##
 
