@@ -8,8 +8,28 @@ This module implements a simple Svelte component with a configurable [CodeMirror
 
 ### Options ###
 
-### Styling ###
+## Styling ##
 
+The visual appearance of CodeMirror components may be adjusted by specifying styles for the CSS classes which have been assigned to the various parts of a CodeMirror instance. You should, however, take care to use rather specific CSS selectors in order to override thje internal default. In the easiest case, you may just assign your own CSS class to a CodeMirror component and mention that in your stylesheet:
+
+```
+<style>
+  :global(.my .CodeMirror) {
+    height:100%; /* to overwrite internal default settings */
+    background:white;
+    font-family:Courier,"Lucida Console",Monaco,monospace;
+    font-size:14px; font-weight:normal;
+    color:black;
+  }
+</style>
+
+<script context="module" lang="ts">
+  import CodeMirror from './CodeMirror.svelte'
+</script>
+
+<CodeMirror class="my" style="width:480px; height:300px; border:solid 1px gray"
+  Value='console.log("Hello, World!")' Mode='js'></CodeMirror>
+```
 
 ## Build Instructions ##
 
