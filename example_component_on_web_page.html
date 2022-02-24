@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" style="width:100%; height:100%">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+  <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+
+  <meta name="apple-mobile-web-app-capable"          content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <meta name="format-detection"                      content="telephone=no">
+
+  <style type="text/css">
+    html {
+      text-size-adjust: 100%;
+      -moz-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+      -o-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+  </style>
+
+  <style>
+    html, body {
+      overflow:hidden;
+
+      font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+      font-size:14px; font-weight:400;
+      line-height:150%;
+    }
+  </style>
+
+<!-- unfortunately, linters have to be loaded separately -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jshint/2.13.4/jshint.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsonlint/1.6.0/jsonlint.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/csslint/1.0.5/csslint.min.js"></script>
+
+  <!-- the following script element loads a fully bundled version -->
+  <script src="https://unpkg.com/svelte-codemirror-component@0.0.3/dist/svelte-codemirror-component.bundled.js"></script>
+
+  <!-- custom styling -->
+  <style>
+  .my .CodeMirror {
+    height:100%; /* to overwrite internal default settings */
+    background:white;
+    font-family:Courier,"Lucida Console",Monaco,monospace;
+    font-size:14px; font-weight:normal;
+    color:black;
+  }
+
+  .my .CodeMirror-gutters {
+    background:#DDDDDD;
+    color:white;
+  }
+
+  .my .CodeMirror-linenumber {
+    color:black;
+  }
+
+  .my .CodeMirror-guttermarker-subtle {
+    color:black;
+  }
+  </style>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+    /**** JavaScript mode ****/
+
+      let JSValue = `
+  function sayHello () {
+    console.log('Hello, World!')
+  }
+#
+  sayHello()
+`.replace(/^\s*\n/,'')
+
+      let JSEditor = new CodeMirrorComponent({
+        target: document.getElementById('JS-Editor'),
+        props: {
+          Value:JSValue, Mode:'js',
+          style:'width:480px; height:240px; border:solid 1px; overflow:auto'
+        }
+      })
+
+    /**** JSON mode ****/
+
+      let JSONValue = `
+  {
+    hugo:true
+  }
+`.replace(/^\s*\n/,'')
+
+      let JSONEditor = new CodeMirrorComponent({
+        target: document.getElementById('JSON-Editor'),
+        props: {
+          Value:JSONValue, Mode:'json',
+          style:'width:480px; height:240px; border:solid 1px; overflow:auto'
+        }
+      })
+
+    /**** HTML mode ****/
+
+      let HTMLValue = `
+  <html>
+   <head></head> >
+   <body></body>
+  </html>
+`.replace(/^\s*\n/,'')
+
+      let HTMLEditor = new CodeMirrorComponent({
+        target: document.getElementById('HTML-Editor'),
+        props: {
+          Value:HTMLValue, Mode:'html',
+          style:'width:480px; height:240px; border:solid 1px; overflow:auto'
+        }
+      })
+
+    /**** CSS mode ****/
+
+      let CSSValue = `
+  body, html {
+    width:100%; height:100%%
+  }
+`.replace(/^\s*\n/,'')
+
+      let CSSEditor = new CodeMirrorComponent({
+        target: document.getElementById('CSS-Editor'),
+        props: {
+          Value:CSSValue, Mode:'css',
+          style:'width:480px; height:240px; border:solid 1px; overflow:auto'
+        }
+      })
+    })
+  </script>
+ </head>
+ <body>
+
+  <p style="line-height:150%">
+    This example demonstrates the use of a CodeMirror component outside svelte
+    within a simple HTML document. It illustrates custom styling and how to
+    load linters in order to see any syntactical errors in JavaScript, JSON,
+    HTML or CSS texts.
+  </p>
+
+  <p><b>JavaScript</b> mode</p>
+  <div id="JS-Editor" class="my"></div>
+
+  <p><b>JSON</b> mode</p>
+  <div id="JSON-Editor" class="my"></div>
+
+  <p><b>HTML</b> mode</p>
+  <div id="HTML-Editor" class="my"></div>
+
+  <p><b>CSS</b> mode</p>
+  <div id="CSS-Editor" class="my"></div>
+ </body>
+</html>
