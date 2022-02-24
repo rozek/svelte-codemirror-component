@@ -2,6 +2,12 @@
 --                        Svelte CodeMirror Component                         --
 ------------------------------------------------------------------------------->
 
+<style>
+  :global(.my .CodeMirror) {
+    height:100%; /* to overwrite internal default settings */
+  }
+</style>
+
 <script lang="ts">
   import 'codemirror/lib/codemirror.css'
   import CodeMirror from 'codemirror/lib/codemirror.js'
