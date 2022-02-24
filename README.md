@@ -20,10 +20,10 @@ npm install svelte-codemirror-component
 
 ```
 <script context="module">
-  import CodeMirror from 'svelte-codemirror-component'
+  import CodeMirrorComponent from 'svelte-codemirror-component'
 </script>
 
-<CodeMirror/>
+<CodeMirrorComponent/>
 ```
 
 > **Warning**: as I have not yet been able to bundle [JSHint](https://jshint.com/), [JSONLint](https://github.com/zaach/jsonlint) and [CSSLint](https://github.com/CSSLint/csslint), you will have to import them yourself if you plan to use syntax checking for JavaScript, JSON or CSS files:
@@ -36,10 +36,10 @@ npm install svelte-codemirror-component
 </svelte:head>
 
 <script context="module">
-  import CodeMirror from 'svelte-codemirror-component'
+  import CodeMirrorComponent from 'svelte-codemirror-component'
 </script>
 
-<CodeMirror Mode='js'/>
+<CodeMirrorComponent Mode='js'/>
 ```
 
 If you are sensitive to the GDPR (or similar regulations) you should probably first copy the mentioned JavaScript files to your local server and reference them from there.
@@ -53,7 +53,7 @@ If you are sensitive to the GDPR (or similar regulations) you should probably fi
 
 ```
 <script context="module">
-  import CodeMirror from 'svelte-codemirror-component'
+  import CodeMirrorComponent from 'svelte-codemirror-component'
 </script>
 
 <script >
@@ -62,7 +62,7 @@ If you are sensitive to the GDPR (or similar regulations) you should probably fi
   $: console.log('new Value',Value)
 </script>
 
-<CodeMirror bind:Editor={Editor} bind:Value={Value}/>
+<CodeMirrorComponent bind:Editor={Editor} bind:Value={Value}/>
 ```
 
 ## Options and Bindings ##
@@ -83,7 +83,7 @@ The CodeMirror component already defines a few simple options itself - in additi
 
 Right now, only one type of CodeMirror event is passed through to the user of a CodeMirror component:
 
-* **`change`**<br>this event is fired whenever the edited text changes. You may catch it like any other Svelte event:<br>`<CodeMirror on:change={your-event-handler}></CodeMirror>`
+* **`change`**<br>this event is fired whenever the edited text changes. You may catch it like any other Svelte event:<br>`<CodeMirrorComponent on:change={your-event-handler}/>`
 
 ## Styling ##
 
@@ -101,11 +101,11 @@ The visual appearance of CodeMirror components may be adjusted by specifying sty
 </style>
 
 <script context="module" lang="ts">
-  import CodeMirror from 'svelte-codemirror-component'
+  import CodeMirrorComponent from 'svelte-codemirror-component'
 </script>
 
-<CodeMirror class="my" style="width:480px; height:300px; border:solid 1px gray"
-  Value='console.log("Hello, World!")' Mode='js'></CodeMirror>
+<CodeMirrorComponent class="my" style="width:480px; height:300px; border:solid 1px gray"
+  Value='console.log("Hello, World!")' Mode='js'/>
 ```
 
 ## Build Instructions ##
