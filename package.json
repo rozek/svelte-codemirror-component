@@ -1,6 +1,6 @@
 {
   "name": "svelte-codemirror-component",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a CodeMirror component for Svelte",
   "type": "module",
   "browser": "./dist/svelte-codemirror-component.js",
