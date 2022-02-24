@@ -4,6 +4,8 @@ a simple CodeMirror component for Svelte
 
 This module implements a simple Svelte component with a configurable [CodeMirror 5](https://codemirror.net/) instance. It is based on a [simpilar component which is part of the Svelte REPL](https://github.com/sveltejs/svelte-repl/blob/master/src/CodeMirror.svelte) and a [Svelte REPL example](https://svelte.dev/repl/a199ca2d451e4b0b92a8abd2d0e71ec6).
 
+> Nota bene: like many other Svelte components, this one may also be used outside Svelte in a normal HTML document
+
 **NPM users**: please consider the [Github README](https://github.com/rozek/svelte-codemirror/blob/main/README.md) for the latest description of this package (as updating the docs would otherwise always require a new NPM package version)
 
 > Just a small note: if you like this module and plan to use it, consider "starring" this repository (you will find the "Star" button on the top right of this page), so that I know which of my repositories to take most care of.
@@ -106,6 +108,34 @@ The visual appearance of CodeMirror components may be adjusted by specifying sty
 
 <CodeMirrorComponent class="my" style="width:480px; height:300px; border:solid 1px gray"
   Value='console.log("Hello, World!")' Mode='js'/>
+```
+
+## Usage outside Svelte ##
+
+The (bundled version of the) CodeMirror component may also be used outside Svelte in a normal HTML page as shown in a [separate example](example_component_on_web_page.html). Just load the bundled version together with any desired linters and insert it into a given DOM element:
+
+```
+<!DOCTYPE html>
+<html>
+ <head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jshint/2.13.4/jshint.min.js"></script>
+  <script src="https://unpkg.com/svelte-codemirror-component@latest/dist/svelte-codemirror-component.bundled.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let JSValue  = `console.log('Hello, World!')`
+      let JSEditor = new CodeMirrorComponent({
+        target: document.getElementById('JS-Editor'),
+        props: {
+          Value:JSValue, Mode:'js',
+          style:'width:480px; height:320px; border:solid 1px; overflow:auto'
+        }
+      })
+  </script>
+ </head>
+ <body>
+  <div id="JS-Editor"></div>
+ </body>
+</html>
 ```
 
 ## Build Instructions ##
