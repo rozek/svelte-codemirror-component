@@ -2,13 +2,47 @@
 
 a CodeMirror component for Svelte
 
-This module implements a simple Svelte component with a configurable [CodeMirror 5](https://codemirror.net/) instance. It is based on a [simpilar component which is part of the Svelte REPL](https://github.com/sveltejs/svelte-repl/blob/master/src/CodeMirror.svelte) and a [Svelte REPL example](https://svelte.dev/repl/a199ca2d451e4b0b92a8abd2d0e71ec6)
+This module implements a simple Svelte component with a configurable [CodeMirror 5](https://codemirror.net/) instance. It is based on a [simpilar component which is part of the Svelte REPL](https://github.com/sveltejs/svelte-repl/blob/master/src/CodeMirror.svelte) and a [Svelte REPL example](https://svelte.dev/repl/a199ca2d451e4b0b92a8abd2d0e71ec6).
 
 **NPM users**: please consider the [Github README](https://github.com/rozek/svelte-codemirror/blob/main/README.md) for the latest description of this package (as updating the docs would otherwise always require a new NPM package version)
 
 > Just a small note: if you like this module and plan to use it, consider "starring" this repository (you will find the "Star" button on the top right of this page), so that I know which of my repositories to take most care of.
 
+## Installation ##
+
+```
+npm install svelte-codemirror
+```
+
 ## Usage ##
+
+`svelte-codemirror` should be imported in a module context and may then be used in your markup:
+
+```
+<script context="module">
+  import CodeMirror from 'svelte-codemirror'
+</script>
+
+<CodeMirror/>
+```
+
+> Warning: as I have not yet been able to bundle JSHint, JSONLint and CSSLint, you will have to import them yourself if you plan to use syntax checking for JavaScript, JSON or CSS files:
+
+```
+<svelte:head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jshint/2.13.4/jshint.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsonlint/1.6.0/jsonlint.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/csslint/1.0.5/csslint.min.js"></script>
+</svelte:head>
+
+<script context="module">
+  import CodeMirror from 'svelte-codemirror'
+</script>
+
+<CodeMirror Mode='js'/>
+```
+
+If you are sensitive to the GDPR (or similar regulations) you should probably first copy the mentioned JavaScript files to your local server and reference them from there.
 
 ## Options and Bindings ##
 
