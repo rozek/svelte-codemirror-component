@@ -15,7 +15,7 @@ export default {
   ],
   output: [
     {
-      file:     './dist/svelte-codemirror.js',
+      file:     './dist/svelte-codemirror-component.js',
       format:    'umd', // builds for both Node.js and Browser
       name:      'CodeMirrorComponent', // required for UMD modules
       globals: {
@@ -25,7 +25,7 @@ export default {
       sourcemap: true,
       exports:   'default',
     },{
-      file:     './dist/svelte-codemirror.esm.js',
+      file:     './dist/svelte-codemirror-component.esm.js',
       format:   'esm',
       sourcemap:true,
     }
@@ -33,7 +33,7 @@ export default {
   plugins: [
     svelte({ preprocess:[
       autoPreprocess({ aliases:[['ts','typescript']] }),
-      saveToFile('./dist/svelte-codemirror.svelte')
+      saveToFile('./dist/svelte-codemirror-component.svelte')
     ]}),
     resolve({ browser:true, dedupe:['svelte'] }), commonjs(), typescript(),
     postcss({ extract:false, inject:{insertAt:'top'} }),
