@@ -44,14 +44,32 @@ npm install svelte-codemirror
 
 If you are sensitive to the GDPR (or similar regulations) you should probably first copy the mentioned JavaScript files to your local server and reference them from there.
 
+## Bindings ##
+
+`svelte-codemirror` offers two bindings whioch give you direct access to the underlying CodeMirror instance and the current value of the edited text:
+
+* **`Editor`**<br>allows to address the CodeMirror instance directly (which might be useful if you plan to react on CodeMirror events)
+* **`Value`**<br>"reactively" binds to the currently edited text
+
+```
+<script context="module">
+  import CodeMirror from 'svelte-codemirror'
+</script>
+
+<script >
+  let Editor, Value = 'initial Value'
+  
+  $: console.log('new Value',Value)
+</script>
+
+<CodeMirror bind:Editor={Editor} bind:Value={Value}/>
+```
+
 ## Options and Bindings ##
 
 The CodeMirror component already defines a few simple options itself - in addition to an `Options` attribute which may be used to pass any options directly to the CodeMirror instance.
 
 The available Bindings are
-
-* **`Editor`**<br>
-* **`Value`**<br>
 
 The predefined options are
 
