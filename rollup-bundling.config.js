@@ -11,7 +11,7 @@ import { terser }     from 'rollup-plugin-terser'
 export default {
   input: './src/index.ts',
   output: {
-    file:     './dist/svelte-codemirror.bundled.js',
+    file:     './dist/svelte-codemirror-component.bundled.js',
     format:    'umd', // builds for both Node.js and Browser
     name:      'CodeMirrorComponent', // required for UMD modules
     noConflict:true,
