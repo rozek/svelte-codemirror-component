@@ -46,7 +46,7 @@ If you are sensitive to the GDPR (or similar regulations) you should probably fi
 
 ## Bindings ##
 
-`svelte-codemirror` offers two bindings whioch give you direct access to the underlying CodeMirror instance and the current value of the edited text:
+`svelte-codemirror` offers two bindings which give you direct access to the underlying CodeMirror instance and the current value of the edited text:
 
 * **`Editor`**<br>allows to address the CodeMirror instance directly (which might be useful if you plan to react on CodeMirror events)
 * **`Value`**<br>"reactively" binds to the currently edited text
@@ -67,21 +67,17 @@ If you are sensitive to the GDPR (or similar regulations) you should probably fi
 
 ## Options and Bindings ##
 
-The CodeMirror component already defines a few simple options itself - in addition to an `Options` attribute which may be used to pass any options directly to the CodeMirror instance.
+The CodeMirror component already defines a few simple options itself - in addition to an `Options` attribute which may be used to pass any (other) options directly to the CodeMirror instance. Options will only be considered during component instantiation - later changes will be ignored.
 
-The available Bindings are
-
-The predefined options are
-
-* **`Mode`**<br>
-* **`LintOptions`**<br>
-* **`withLineNumbers`**<br>
-* **`withLineWrapping`**<br>
-* **`Indentation`**<br>
-* **`TabSize`**<br>
-* **`indentWithTabs`**<br>
-* **`closeBrackets`**<br>
-* **`closeTags`**<br>
+* **`Mode`**<br>specifies the language mode CodeMirror is working in. You may specify either `js` (for JavaScript), `svelte`, `json`, `html`, `css` or `yaml` - by default, `Mode` is set to `js`
+* **`LintOptions`**<br>by default, texts edited in mode `js`, `json`, `html` or `css` are "linted", i.e., any syntactic errors are indicated as such in the "gutter" area to the left of the incorrect line. You may alternatively specify an object with specific options for the chosen linter - or simply disable linting by setting it to `false`
+* **`withLineNumbers`**<br>set this option to `true` (which is also the default) in order to show line numbers in the "gutter area" to the left of the edited text - or to `false` otherwise
+* **`withLineWrapping`**<br>set this option to `true` in order to let long lines be wrapped - or to `false` otherwise (`false` is the default)
+* **`Indentation`**<br>specifies the number of characters a new line should be indented automatically after the beginning of a new JavaScript or JSON block or list (i.e., after `{` or `[`) or a new HTML tag (i.e., after `<`). By default, it is set to `2`
+* **`TabSize`**<br>specifies the number of characters a horizontal tab should proceed (by default, the tab size is set to 2)
+* **`indentWithTabs`**<br>set this to `true` if you want tabs to be preserved - or `false` if you prefer spaces instead of tabs (by default, this option is set to `false`, i.e., spaces are preferred)
+* **`closeBrackets`**<br>set this to `true` if you want CodeMirror to automatically insert a closing brace for you whenever you enter an opening one - or `false` otherwise (by default, no closing bracket is inserted)
+* **`closeTags`**<br>set this to `true` if you want CodeMirror to automatically insert a closing `>` for you whenever you enter a `<` in HTML mode - or `false` otherwise (by default, opened tags are not automatically closed)
 
 ## Events ##
 
