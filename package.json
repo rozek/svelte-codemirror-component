@@ -1,27 +1,27 @@
 {
-  "name": "svelte-codemirror",
+  "name": "svelte-codemirror-component",
   "version": "0.0.1",
   "description": "a CodeMirror component for Svelte",
   "type": "module",
-  "browser": "./dist/svelte-codemirror.js",
-  "module": "./dist/svelte-codemirror.esm.js",
-  "svelte": "./dist/svelte-codemirror.svelte",
-  "types": "./dist/svelte-codemirror.d.ts",
+  "browser": "./dist/svelte-codemirror-component.js",
+  "module": "./dist/svelte-codemirror-component.esm.js",
+  "svelte": "./dist/svelte-codemirror-component.svelte",
+  "types": "./dist/svelte-codemirror-component.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/svelte-codemirror.js",
-      "import": "./dist/svelte-codemirror.esm.js"
+      "require": "./dist/svelte-codemirror-component.js",
+      "import": "./dist/svelte-codemirror-component.esm.js"
     },
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "rimraf dist && rollup -c rollup.config.js && rollup -c rollup-bundling.config.js && tsc && mv src/*.d.ts dist/svelte-codemirror.d.ts && rm src/*.js*",
+    "build": "rimraf dist && rollup -c rollup.config.js && rollup -c rollup-bundling.config.js && tsc && mv src/*.d.ts dist/svelte-codemirror-component.d.ts && rm src/*.js*",
     "agadoo": "agadoo",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rozek/svelte-codemirror.git"
+    "url": "git+https://github.com/rozek/svelte-codemirror-component.git"
   },
   "keywords": [
     "svelte",
@@ -33,9 +33,9 @@
   "author": "Andreas Rozek <a.rozek@gmx.de> (https://www.rozek.de/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rozek/svelte-sortable-flat-list-view/issues"
+    "url": "https://github.com/rozek/svelte-codemirror-component/issues"
   },
-  "homepage": "https://github.com/rozek/svelte-sortable-flat-list-view#readme",
+  "homepage": "https://github.com/rozek/svelte-codemirror-component#readme",
   "dependencies": {
     "codemirror": "^5.65.2",
     "csslint": "^1.0.5",
