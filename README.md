@@ -29,9 +29,9 @@ The predefined options are
 
 ## Events ##
 
-Right now, only one type of CodeMirror events is passed through to the user of a CodeMirror component:
+Right now, only one type of CodeMirror event is passed through to the user of a CodeMirror component:
 
-* **`change`**<br>
+* **`change`**<br>this event is fired whenever the edited text changes. You may catch it like any other Svelte event: `<CodeMirror on:change={your-event-handler}></CodeMirror>`
 
 ## Styling ##
 
