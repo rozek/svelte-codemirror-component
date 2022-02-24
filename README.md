@@ -4,6 +4,10 @@ a CodeMirror component for Svelte
 
 This module implements a simple Svelte component with a configurable [CodeMirror 5](https://codemirror.net/) instance. It is based on a [simpilar component which is part of the Svelte REPL](https://github.com/sveltejs/svelte-repl/blob/master/src/CodeMirror.svelte) and a [Svelte REPL example](https://svelte.dev/repl/a199ca2d451e4b0b92a8abd2d0e71ec6)
 
+**NPM users**: please consider the [Github README](https://github.com/rozek/svelte-codemirror/blob/main/README.md) for the latest description of this package (as updating the docs would otherwise always require a new NPM package version)
+
+> Just a small note: if you like this module and plan to use it, consider "starring" this repository (you will find the "Star" button on the top right of this page), so that I know which of my repositories to take most care of.
+
 ## Usage ##
 
 ## Options and Bindings ##
