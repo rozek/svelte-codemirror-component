@@ -26,7 +26,7 @@ npm install svelte-codemirror
 <CodeMirror/>
 ```
 
-> Warning: as I have not yet been able to bundle [JSHint](https://jshint.com/), [JSONLint](https://github.com/zaach/jsonlint) and [CSSLint](https://github.com/CSSLint/csslint), you will have to import them yourself if you plan to use syntax checking for JavaScript, JSON or CSS files:
+> **Warning**: as I have not yet been able to bundle [JSHint](https://jshint.com/), [JSONLint](https://github.com/zaach/jsonlint) and [CSSLint](https://github.com/CSSLint/csslint), you will have to import them yourself if you plan to use syntax checking for JavaScript, JSON or CSS files:
 
 ```
 <svelte:head>
