@@ -1,4 +1,4 @@
-# svelte-codemirror #
+# svelte-codemirror-component #
 
 a CodeMirror component for Svelte
 
@@ -11,7 +11,7 @@ This module implements a simple Svelte component with a configurable [CodeMirror
 ## Installation ##
 
 ```
-npm install svelte-codemirror
+npm install svelte-codemirror-component
 ```
 
 ## Usage ##
@@ -20,7 +20,7 @@ npm install svelte-codemirror
 
 ```
 <script context="module">
-  import CodeMirror from 'svelte-codemirror'
+  import CodeMirror from 'svelte-codemirror-component'
 </script>
 
 <CodeMirror/>
@@ -36,7 +36,7 @@ npm install svelte-codemirror
 </svelte:head>
 
 <script context="module">
-  import CodeMirror from 'svelte-codemirror'
+  import CodeMirror from 'svelte-codemirror-component'
 </script>
 
 <CodeMirror Mode='js'/>
@@ -53,7 +53,7 @@ If you are sensitive to the GDPR (or similar regulations) you should probably fi
 
 ```
 <script context="module">
-  import CodeMirror from 'svelte-codemirror'
+  import CodeMirror from 'svelte-codemirror-component'
 </script>
 
 <script >
@@ -101,7 +101,7 @@ The visual appearance of CodeMirror components may be adjusted by specifying sty
 </style>
 
 <script context="module" lang="ts">
-  import CodeMirror from './CodeMirror.svelte'
+  import CodeMirror from 'svelte-codemirror-component'
 </script>
 
 <CodeMirror class="my" style="width:480px; height:300px; border:solid 1px gray"
@@ -114,7 +114,7 @@ You may easily build this package yourself.
 
 Just install [NPM](https://docs.npmjs.com/) according to the instructions for your platform and follow these steps:
 
-1. either clone this repository using [git](https://git-scm.com/) or [download a ZIP archive](https://github.com/rozek/svelte-codemirror/archive/refs/heads/main.zip) with its contents to your disk and unpack it there 
+1. either clone this repository using [git](https://git-scm.com/) or [download a ZIP archive](https://github.com/rozek/svelte-codemirror-component/archive/refs/heads/main.zip) with its contents to your disk and unpack it there 
 2. open a shell and navigate to the root directory of this repository
 3. run `npm install` in order to install the complete build environment
 4. execute `npm run build` to create a new build
