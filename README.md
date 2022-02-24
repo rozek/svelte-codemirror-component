@@ -16,7 +16,7 @@ npm install svelte-codemirror-component
 
 ## Usage ##
 
-`svelte-codemirror` should be imported in a module context and may then be used in your markup:
+`svelte-codemirror-component` should be imported in a module context and may then be used in your markup:
 
 ```
 <script context="module">
@@ -46,7 +46,7 @@ If you are sensitive to the GDPR (or similar regulations) you should probably fi
 
 ## Bindings ##
 
-`svelte-codemirror` offers two bindings which give you direct access to the underlying CodeMirror instance and the current value of the edited text:
+`svelte-codemirror-component` offers two bindings which give you direct access to the underlying CodeMirror instance and the current value of the edited text:
 
 * **`Editor`**<br>allows to address the CodeMirror instance directly (which might be useful if you plan to react on CodeMirror events)
 * **`Value`**<br>"reactively" binds to the currently edited text
