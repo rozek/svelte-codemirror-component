@@ -20,7 +20,7 @@ npm install svelte-codemirror-component
 
 `svelte-codemirror-component` should be imported in a module context and may then be used in your markup:
 
-```
+```html
 <script context="module">
   import CodeMirrorComponent from 'svelte-codemirror-component'
 </script>
@@ -30,7 +30,7 @@ npm install svelte-codemirror-component
 
 > **Warning**: as I have not yet been able to bundle [JSHint](https://jshint.com/), [JSONLint](https://github.com/zaach/jsonlint) and [CSSLint](https://github.com/CSSLint/csslint), you will have to import them yourself if you plan to use syntax checking for JavaScript, JSON or CSS files:
 
-```
+```html
 <svelte:head>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jshint/2.13.4/jshint.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jsonlint/1.6.0/jsonlint.min.js"></script>
@@ -53,7 +53,7 @@ If you are sensitive to the GDPR (or similar regulations) you should probably fi
 * **`Editor`**<br>allows to address the CodeMirror instance directly (which might be useful if you plan to react on CodeMirror events)
 * **`Value`**<br>"reactively" binds to the currently edited text
 
-```
+```html
 <script context="module">
   import CodeMirrorComponent from 'svelte-codemirror-component'
 </script>
@@ -91,7 +91,7 @@ Right now, only one type of CodeMirror event is passed through to the user of a 
 
 The visual appearance of CodeMirror components may be adjusted by specifying styles for the CSS classes which have been assigned to the various parts of a CodeMirror instance. You should, however, take care to use rather specific CSS selectors in order to override the internal defaults. In the easiest case, you may just assign your own CSS class to a CodeMirror component and mention that in your stylesheet:
 
-```
+```html
 <style>
   :global(.my .CodeMirror) {
     height:100%; /* to overwrite internal default settings */
@@ -114,7 +114,7 @@ The visual appearance of CodeMirror components may be adjusted by specifying sty
 
 The (bundled version of the) CodeMirror component may also be used outside Svelte in a normal HTML page as shown in a [separate example](example_component_on_web_page.html). Just load the bundled version together with any desired linters and insert it into a given DOM element:
 
-```
+```html
 <!DOCTYPE html>
 <html>
  <head>
